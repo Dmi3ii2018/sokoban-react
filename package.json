@@ -1,0 +1,57 @@
+{
+  "name": "sokoban",
+  "version": "1.0.0",
+  "description": "Sokoban game, made with react js",
+  "main": "public/bundle.js",
+  "scripts": {
+    "eslint": "eslint --ext .jsx --ext .js src/",
+    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
+    "test": "npm run stylelint",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server",
+    "start": "node ./public/server.js",
+    "heroku-postbuild": "webpack -p"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.4",
+    "@babel/preset-env": "7.6.3",
+    "@babel/preset-react": "7.6.3",
+    "babel-jest": "24.9.0",
+    "babel-loader": "8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.15.1",
+    "eslint": "5.13.0",
+    "eslint-config-htmlacademy": "0.5.2",
+    "eslint-plugin-react": "7.16.0",
+    "express": "^4.17.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^5.0.2",
+    "heroku": "^7.37.0",
+    "image-webpack-loader": "^6.0.0",
+    "jest": "24.9.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "react-test-renderer": "16.10.2",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "stylelint": "^13.0.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-scss": "^3.14.2",
+    "webpack": "4.41.1",
+    "webpack-cli": "3.3.9",
+    "webpack-dev-server": "3.8.2"
+  },
+  "engines": {
+    "node": "10.15.3"
+  },
+  "dependencies": {
+    "prop-types": "15.7.2",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
+    "react-redux": "7.1.3",
+    "redux": "4.0.4",
+    "url-loader": "^3.0.0"
+  }
+}
