@@ -2,14 +2,14 @@
   "name": "sokoban",
   "version": "1.0.0",
   "description": "Sokoban game, made with react js",
-  "main": "public/bundle.js",
+  "main": "server.js",
   "scripts": {
     "eslint": "eslint --ext .jsx --ext .js src/",
     "stylelint": "stylelint \"src/**/*.css\" --syntax css",
     "test": "npm run stylelint && npm run eslint",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server",
-    "start": "node ./public/server.js",
+    "start": "node server.js",
     "heroku-postbuild": "webpack -p"
   },
   "devDependencies": {
