@@ -5,8 +5,8 @@
   "main": "public/bundle.js",
   "scripts": {
     "eslint": "eslint --ext .jsx --ext .js src/",
-    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
-    "test": "npm run stylelint",
+    "stylelint": "stylelint \"src/**/*.css\" --syntax css",
+    "test": "npm run stylelint && npm run eslint",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server",
     "start": "node ./public/server.js",

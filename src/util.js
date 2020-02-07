@@ -82,7 +82,7 @@ const keyPressHandler = (lev, x, y, inputHandler) => (e) => {
     inputHandler(level);
     return;
   } else {
-    alert(`You win!`);
+    return; // TODO: handale win
   }
 };
 

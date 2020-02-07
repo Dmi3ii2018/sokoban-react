@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setListener, removeListener} from '../util.js';
 import {ActionCreator} from '../actions/actions.js';
+import PropTypes from 'prop-types';
+
 
 const getItems = (data) => {
   const level = [[], [], [], [], [], [], [], [], []];
@@ -55,3 +57,9 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  gameMap: PropTypes.arrayOf(PropTypes.array),
+  initialMap: PropTypes.arrayOf(PropTypes.array),
+  onKeyPress: PropTypes.func,
+};
