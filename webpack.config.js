@@ -1,16 +1,16 @@
 const path = require(`path`);
 const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
-const CopyWebpackPlugin = require(`copy-webpack-plugin`);
+const HtmlWebpackPlugin = require(`html-webpack-plugin`);
 
 module.exports = {
   entry: `./src/main.js`,
   output: {
     filename: `bundle.js`,
-    path: path.join(__dirname, `public`)
+    path: path.join(__dirname, `build`)
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: path.join(__dirname, `public`),
+    contentBase: path.join(__dirname, `build`),
     compress: false,
     open: true,
     port: 1337,
@@ -20,6 +20,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: `html-loader`
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -64,6 +68,11 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: `[name].css`,
+    }),
+    new HtmlWebpackPlugin({
+      hash: false,
+      template: `./src/index.html`,
+      filename: `index.html`,
     }),
   ],
 };
