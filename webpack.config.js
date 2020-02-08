@@ -44,6 +44,15 @@ module.exports = {
         ]
       },
       {
+        test: /fonts[\\\/].+\.(ttf|woff|woff2)$/,
+        use: {
+          loader: `file-loader`,
+          options: {
+            name: `fonts/[name][hash].[ext]`
+          }
+        },
+      },
+      {
         test: /images[\\\/].+\.(gif|png|jpe?g|svg)$/i,
         use: [{
           loader: `file-loader`,

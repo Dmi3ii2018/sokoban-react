@@ -3,8 +3,10 @@ import {connect} from 'react-redux';
 import {setListener, removeListener} from '../util.js';
 import {ActionCreator} from '../actions/actions.js';
 import PropTypes from 'prop-types';
-
-
+import Auth0Web from 'auth0-web';
+import {RankBoard} from './rankboard/rankboard.jsx';
+import {players} from '../mock/mock.js';
+// TODO: separate presenter and container
 const getItems = (data) => {
   const level = [[], [], [], [], [], [], [], [], []];
   for (let n = 0; n < data.length; n++) {
@@ -17,6 +19,14 @@ const getItems = (data) => {
   return level;
 };
 
+const aut = new Auth0Web({
+  domain: `dev-ras4v53d.eu.auth0.com`,
+  clientID: `7efOSMkZZRETeGkEJx20ES4xYrG0zwjT`,
+  redirectUri: `http://localhost:1337/`,
+  responseType: `token id_token`,
+  scope: `openid profile manage:points`,
+});
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,6 +36,13 @@ class App extends React.Component {
 
   componentDidMount() {
     setListener(this.props.initialMap, this._onKeyPress);
+    const self = this;
+
+    aut.isAuthenticated();
+
+    aut.subscribe((auth) => {
+      console.log(auth);
+    });
   }
 
   render() {
@@ -39,6 +56,11 @@ class App extends React.Component {
           })
         }
       </ul>
+      <RankBoard
+        currentPlayer={players[2]}
+        players={players}
+        auth={aut.signIn}
+      />
     </div>;
   }
 
