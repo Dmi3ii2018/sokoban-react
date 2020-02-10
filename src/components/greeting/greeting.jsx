@@ -24,7 +24,6 @@ export class Greeting extends React.Component {
       const newPlayer = {name: this.state.name, maxScore: 0, id: uniqId()};
       this.props.setGameStatus(`playing`);
       this.props.setCurrentPlayer(newPlayer);
-      // this.props.addNewPlayer(newPlayer);
     } else {
       this.setState(() => (
         {isNameValid: false}
@@ -37,9 +36,9 @@ export class Greeting extends React.Component {
 
     return <div className="greeting">
       <h2>Welcome to Sokoban Game!</h2>
-      {isNameValid ? null : <p>Please enter your name</p>}
       <input type="text" value={name} onChange={this._inputHandler} placeholder=" Your Name" />
       <button className="button" name="Play" onClick={this._buttonClickHandler} >Play</button>
+      {isNameValid ? null : <p className="error">Please enter your name</p>}
     </div>;
   }
 }
@@ -47,5 +46,4 @@ export class Greeting extends React.Component {
 Greeting.propTypes = {
   setGameStatus: PropTypes.func,
   setCurrentPlayer: PropTypes.func,
-  addNewPlayer: PropTypes.func,
 };

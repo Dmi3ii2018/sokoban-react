@@ -1,12 +1,9 @@
-// TODO: separate presenter and container
-// TODO: clean json and reducer
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import Greeting from '../containers/greeting.js';
-import GameBoard from '../containers/game-board.js';
-import RanckBoard from '../containers/ranckboard.js';
-import {GameStatus} from '../util.js';
+import Greeting from '../../containers/greeting.js';
+import GameBoard from '../../containers/game-board.js';
+import RanckBoard from '../../containers/ranckboard.js';
+import {GameStatus} from '../../util.js';
 
 export class App extends React.Component {
   constructor(props) {

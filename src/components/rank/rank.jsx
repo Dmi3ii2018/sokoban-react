@@ -20,6 +20,6 @@ export const Rank = (props) => {
 Rank.propTypes = {
   name: PropTypes.string,
   score: PropTypes.number,
-  rank: PropTypes.any,
+  rank: PropTypes.number,
   isActive: PropTypes.bool,
 };

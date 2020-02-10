@@ -8,9 +8,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   setCurrentPlayer: (newPlayer) => {
     dispatch(ActionCreator.setCurrentPlayer(newPlayer));
-  },
-  addNewPlayer: (player) => {
-    dispatch(ActionCreator.addNewPlayer(player));
   }
 });
 

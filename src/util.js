@@ -5,14 +5,11 @@ export const GameStatus = {
 };
 
 export const keyPressHandler = (level, x, y, inputHandler, winHandler, setWin) => (e) => {
-
   let dx;
   let dy;
   let fwdCell;
 
   const updateClasses = ({row, col, value}) => {
-    // update(level, {[row]: {[col]: {$set: value}}});
-    // console.log(`Change: Y: ${row}, X: ${col}, value: ${value}`);
     level[row][col] = value;
   };
 

@@ -34,7 +34,7 @@ export class Timer extends React.Component {
       setScore(timeDiffMillisec);
     }
 
-    return <p>
+    return <p className="timer">
       {`${timeDiff.getUTCHours()}:${timeDiff.getUTCMinutes()}:${timeDiff.getUTCSeconds()}`}
     </p>;
   }
@@ -44,5 +44,4 @@ Timer.propTypes = {
   startTime: PropTypes.instanceOf(Date),
   setScore: PropTypes.func,
   isWin: PropTypes.bool,
-  addNewPlayer: PropTypes.func,
 };

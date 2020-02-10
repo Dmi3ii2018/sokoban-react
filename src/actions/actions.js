@@ -25,10 +25,6 @@ export const ActionCreator = {
     type: ActionType.CHANGE_GAME_STATUS,
     status,
   }),
-  addNewPlayer: (player) => ({
-    type: ActionType.ADD_NEW_PLAYER,
-    payload: player,
-  }),
   addNewScore: (score) => ({
     type: ActionType.ADD_NEW_SCORE,
     payload: score,

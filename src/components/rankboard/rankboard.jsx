@@ -4,18 +4,6 @@ import PropTypes from 'prop-types';
 
 export const RanckBoard = (props) => {
   let leaderboard = props.players || [];
-  // let ranckList = [];
-
-  // leaderboard.forEach((element, i, arr) => {
-  //   if (i === arr.length - 1) {
-  //     ranckList.push(arr[arr.length - 1]);
-  //     return;
-  //   }
-  //   if (element.name !== arr[i + 1].name) {
-  //     ranckList.push(element);
-  //     console.log(ranckList);
-  //   }
-  // });
 
   leaderboard.sort((prev, next) => {
     if (prev.maxScore === next.maxScore) {
@@ -35,8 +23,6 @@ export const RanckBoard = (props) => {
     }
     return null;
   });
-console.log(displayedPlayers);
-console.log(leaderboard);
 
   return <div className="rankboard">
     {displayedPlayers.map((player) => {

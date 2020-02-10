@@ -2,8 +2,6 @@ import React from 'react';
 import Game from '../../containers/game.js';
 import PropTypes from 'prop-types';
 import Timer from '../../containers/timer.js';
-import {gameMap} from '../../reducer/reducer.js';
-import {removeListener} from '../../util.js';
 
 export class GameBoard extends React.Component {
   constructor(props) {
@@ -27,13 +25,9 @@ export class GameBoard extends React.Component {
     const {isWin, startTime} = this.state;
 
     return <div className="game-board">
-      <p>{name}</p>
+      <p className="name">{name}</p>
       <Timer isWin={isWin} startTime={startTime} />
       <Game setWin={this._setWin} />
-      <button onClick={() => {
-        removeListener();
-        this.props.resetGame(gameMap);
-      }}>Restart</button>
     </div>;
   }
 }

@@ -16,16 +16,17 @@ input:-moz-placeholder {
 }
 
 body {
-  /* background-image: url('./images/wall_0.png'); */
+  background-image: url('./images/wall_0.png');
 }
 
 .game-container {
-  width: 350px;
-  height: 350px;
+  width: 600px;
+  height: 600px;
 
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+
 }
 
 .greeting {
@@ -33,18 +34,20 @@ body {
   height: inherit;
 
   background-image:
-    url('./images/crate_0.png'),
     url('./images/crate_0.png');
   background-repeat: no-repeat;
-  background-position:
-    right center,
-    left bottom;
+  background-position: 32% 39%;
   background-size: 150px;
+
+  padding-top: 20%;
+  box-sizing: border-box;
 }
 
 .greeting input {
   width: 190px;
   height: 25px;
+
+  padding-left: 5px;
 }
 
 .greeting input:hover,
@@ -68,12 +71,35 @@ body {
   background-color: lightgray;
 }
 
+.game-board {
+  height: 600px;
+}
+
+.game-board {
+  font-family: 'Joti', Arial, sans-serif;
+  text-align: center;
+}
+
+.name,
+.timer {
+  color: #ffffff;
+  font-size: 30px;
+
+  text-shadow: 3px 3px 4px #000000;
+}
+
+.timer {
+  font-size: 20px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   width: 400px;
   height: 450px;
   border: 1px solid #000000;
+
+  box-shadow: -1px 4px 13px 3px #000000;
 
   margin-left: auto;
   margin-right: auto;
@@ -87,44 +113,61 @@ body {
   box-sizing: border-box;
   width: 50px;
   height: 50px;
-  border: 1px solid gray;
 
   background-repeat: no-repeat;
   background-size: 50px 50px;
   background-position: center;
 }
 
-.s { background: white; }
-.w {
-  background-image: url('./images/wall_0.png');
+.s {
+  background-image: url('./images/space.png');
 }
-.b { background: blue; }
-.p { background: lightgray; }
-.a { background: red; }
-.y, .Y { background: green; }
+.w {
+  background-image: url('./images/wall.png');
+}
+.b {
+  background-image: url('./images/newBox.png');
+}
+.p {
+  background-image: url('./images/dot.png');
+}
+.a {
+  background-image: url('./images/checked-box.png');
+}
+.y, .Y {
+  background-image: url('./images/man.png');
+}
 
 .rankboard {
   font-family: 'Joti', Arial, sans-serif;
   list-style: none;
-  padding: 0;
-  border: 1px solid black;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-top: 40px;
 
-  width: 300px;
+  min-width: 300px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
+
+  border: none;
+  color: white;
+  font-size: 20px;
 }
 
 .ranck {
-  border: 1px solid blue;
   display: flex;
   align-items: center;
   justify-content: left;
+  flex-wrap: wrap;
+
+  border-bottom-style: solid;
 }
 
 .ranck--active {
-  border-color: #c0c025;
-  color: #c0c025;
+  border-color: #ffff00;
+  color: #ffff00;
 }
 
 .rankboard span {
@@ -139,4 +182,12 @@ body {
 .button {
   margin-left: auto;
   margin-right: auto;
+}
+
+.error {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #ffbb00;
+  text-align: left;
+  padding-left: 28%;
 }
