@@ -1,8 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 export const Rank = (props) => {
-  return <div className="rank">
+  const {isActive} = props;
+
+  const ranckClass = cn({
+    'ranck': true,
+    'ranck--active': isActive,
+  });
+
+  return <div className={ranckClass}>
     <span>{props.rank}</span>
     <p>{props.name}</p>
     <span className="score">{props.score}</span>
@@ -12,5 +20,6 @@ export const Rank = (props) => {
 Rank.propTypes = {
   name: PropTypes.string,
   score: PropTypes.number,
-  rank: PropTypes.number,
+  rank: PropTypes.any,
+  isActive: PropTypes.bool,
 };

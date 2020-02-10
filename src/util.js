@@ -1,7 +1,11 @@
-// import update from 'immutability-helper';
+export const GameStatus = {
+  GREETING: `greeting`,
+  PLAYING: `playing`,
+  RANCKBOARD: `ranckboard`,
+};
 
-const keyPressHandler = (lev, x, y, inputHandler) => (e) => {
-  let level = lev;
+export const keyPressHandler = (level, x, y, inputHandler, winHandler, setWin) => (e) => {
+
   let dx;
   let dy;
   let fwdCell;
@@ -78,16 +82,20 @@ const keyPressHandler = (lev, x, y, inputHandler) => (e) => {
       }
     }
   }
+
+  window.removeEventListener(`keyup`, keyPressHandler);
+
   if (!isWin) {
     inputHandler(level);
     return;
   } else {
-    return; // TODO: handale win
+    setWin();
+    winHandler(`ranckboard`);
   }
 };
 
 
-export const setListener = (level, inputHandler) => {
+export const setListener = (level, inputHandler, winHandler, setWin) => {
   let x;
   let y;
 
@@ -99,7 +107,7 @@ export const setListener = (level, inputHandler) => {
       }
     }
   }
-  window.addEventListener(`keydown`, keyPressHandler(level, x, y, inputHandler));
+  window.addEventListener(`keyup`, keyPressHandler(level, x, y, inputHandler, winHandler, setWin));
 };
 
 export const removeListener = () => {

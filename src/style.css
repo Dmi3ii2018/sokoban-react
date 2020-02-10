@@ -1,3 +1,11 @@
+input::-webkit-input-placeholder {
+  font-family: 'Joti', Arial, sans-serif;
+
+}
+input:-moz-placeholder {
+  font-family: 'Joti', Arial, sans-serif;
+}
+
 @font-face {
   font-family: "Joti";
   src: url("./fonts/joti_one.ttf") format("ttf");
@@ -7,11 +15,64 @@
   font-display: swap;
 }
 
+body {
+  /* background-image: url('./images/wall_0.png'); */
+}
+
+.game-container {
+  width: 350px;
+  height: 350px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.greeting {
+  text-align: center;
+  height: inherit;
+
+  background-image:
+    url('./images/crate_0.png'),
+    url('./images/crate_0.png');
+  background-repeat: no-repeat;
+  background-position:
+    right center,
+    left bottom;
+  background-size: 150px;
+}
+
+.greeting input {
+  width: 190px;
+  height: 25px;
+}
+
+.greeting input:hover,
+.greeting input:focus {
+  border-color: burlywood;
+  outline: none;
+}
+
+.greeting h2 {
+  font-family: 'Joti', Arial, sans-serif;
+  margin-bottom: 30px;
+}
+
+.greeting button {
+  font-family: 'Joti', Arial, sans-serif;
+  height: 31px;
+  width: 78px;
+}
+
+.greeting button:hover {
+  background-color: lightgray;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 240px;
-  height: 270px;
+  width: 400px;
+  height: 450px;
   border: 1px solid #000000;
 
   margin-left: auto;
@@ -24,13 +85,19 @@
 .container li {
   display: inline-block;
   box-sizing: border-box;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border: 1px solid gray;
+
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position: center;
 }
 
 .s { background: white; }
-.w { background: black; }
+.w {
+  background-image: url('./images/wall_0.png');
+}
 .b { background: blue; }
 .p { background: lightgray; }
 .a { background: red; }
@@ -48,11 +115,16 @@
   margin-right: auto;
 }
 
-.rank {
+.ranck {
   border: 1px solid blue;
   display: flex;
   align-items: center;
   justify-content: left;
+}
+
+.ranck--active {
+  border-color: #c0c025;
+  color: #c0c025;
 }
 
 .rankboard span {

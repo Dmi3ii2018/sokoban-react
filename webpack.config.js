@@ -13,7 +13,7 @@ module.exports = {
     contentBase: path.join(__dirname, `build`),
     compress: false,
     open: true,
-    port: 1337,
+    port: 3000,
   },
   resolve: {
     extensions: [`*`, `.js`, `.jsx`]

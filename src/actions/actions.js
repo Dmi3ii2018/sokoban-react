@@ -1,7 +1,11 @@
-const ActionType = {
+export const ActionType = {
   SET_NEW_CLASS: `SET_NEW_CLASS`,
   LOAD_LEADER_BOARD: `LOAD_LEADER_BOARD`,
-  LOGGED_IN: `LOGGED_IN`,
+  SET_CURRENT_PLAYER: `SET_NEW_PLAYER`,
+  ADD_NEW_PLAYER: `ADD_NEW_PLAYER`,
+  ADD_NEW_SCORE: `ADD_NEW_SCORE`,
+  CHANGE_GAME_STATUS: `CHANGE_GAME_STATUS`,
+  RESET_GAME: `RESET_GAME`,
 };
 
 export const ActionCreator = {
@@ -13,9 +17,20 @@ export const ActionCreator = {
     type: ActionType.LOAD_LEADER_BOARD,
     payload: players,
   }),
-  loggedIn: (player) => ({
-    type: ActionType.LOGGED_IN,
+  setCurrentPlayer: (player) => ({
+    type: ActionType.SET_CURRENT_PLAYER,
     payload: player,
+  }),
+  changeGameStatus: (status) => ({
+    type: ActionType.CHANGE_GAME_STATUS,
+    status,
+  }),
+  addNewPlayer: (player) => ({
+    type: ActionType.ADD_NEW_PLAYER,
+    payload: player,
+  }),
+  addNewScore: (score) => ({
+    type: ActionType.ADD_NEW_SCORE,
+    payload: score,
   })
-
 };
